@@ -109,7 +109,8 @@ XiaomiMiio.prototype.pollDevice = function(accessory, cb) {
   }).catch((err)=> {
     accessory.updateReachability(false);
     if (cb) cb(err);
-    else this.log("poll update failed on " + accessory.context.miioInfo.id, err);
+//     else this.log("poll update failed on " + accessory.context.miioInfo.id, err);
+	else null;	//Remove message because it clutters logs
   });
 }
 
